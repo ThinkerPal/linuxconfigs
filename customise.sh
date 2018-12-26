@@ -5,7 +5,7 @@ sudo cp ./sources.list /etc/apt/
 
 
 sudo apt update
-sudo apt -y purge libreoffice* gparted
+sudo apt -y purge libreoffice* gparted gnome-disk-utility
 sudo rm /usr/share/applications/ubuntu-amazon-default.desktop
 sudo rm -r /usr/share/ubuntu-web-launchers/amazon-launcher
 
