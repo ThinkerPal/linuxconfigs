@@ -15,5 +15,6 @@ sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /e
 sudo apt-get update
 sudo apt-get -y install google-chrome-stable
 sudo apt -y upgrade
+sudo apt -y purge thunderbird*
 
 
