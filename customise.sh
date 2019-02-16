@@ -11,4 +11,3 @@ sudo apt -y install net-tools  geany g++ python3-pip php apache2 nginx whois ope
 sudo apt -y upgrade
 sudo apt -y purge thunderbird* libreoffice* gparted gnome-disk-utility
 
-
