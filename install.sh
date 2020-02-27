@@ -12,7 +12,7 @@ sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
 sudo apt-get update
-sudo apt -y install net-tools  geany g++ python3-pip php7.2 apache2 nginx whois openssh-server git fish vim emacs npm tmux libxss1 libappindicator1 libindicator7 libc++-dev google-chrome-stable  nodejs apt-transport-https code htop goaccess vlc
+sudo apt -y install net-tools gparted lxde geany g++ python3-pip php7.2 apache2 nginx whois openssh-server git fish vim emacs npm tmux libxss1 libappindicator1 libindicator7 libc++-dev google-chrome-stable  nodejs apt-transport-https code htop goaccess vlc
 
 wget http://192.168.1.8/tsetup.1.9.14.tar.xz -O tele.tar.xz
 tar -xvf tele.tar.xz
