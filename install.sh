@@ -19,10 +19,10 @@ tar -xvf tele.tar.xz
 mv Telegram/ ~/Desktop/
 
 wget https://raw.githubusercontent.com/ThinkerPal/dhslinuxconfigure/master/sync-project.sh -O sync-project.sh
-mv sync-project.sh /sync-project.sh
+sudo mv sync-project.sh /sync-project.sh
 
 sudo touch /etc/cron.d/gitrefresh
-*/3 * * * * /sync-project.sh >> /etc/cron.d/gitrefresh
+sudo */3 * * * * /sync-project.sh >> /etc/cron.d/gitrefresh
 
 sudo apt-get upgrade -y
 
