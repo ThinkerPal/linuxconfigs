@@ -28,7 +28,7 @@ Set-Location C:\path\to\vmdk_folder # Or you can use cd like a normal human bein
 ```
 
 ```cmd
-C:\Location\of\dsfok\defo.exe ./vmdk.vmdk 512 1024 des.txt
+C:\Location\of\dsfok\dsfo.exe ./vmdk.vmdk 512 1024 des.txt
 ```
 
 This creates a new file called des.txt that contains our VMDK descriptor. In the file, look for a line that says `ddb.toolsInstallType = "1"` and comment it out with a `#`. It should look something like this:
