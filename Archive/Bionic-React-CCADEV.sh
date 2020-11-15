@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# This file was a setup script for Linux machines for developing a react webapp. It expects a file server on 192.168.1.8 that serves the Telgram install (to make the download and install faster)
 sudo apt install -y wget curl
 wget https://raw.githubusercontent.com/ThinkerPal/dhslinuxconfigure/master/sources.list
 sudo cp ./sources.list /etc/apt/
@@ -20,9 +20,6 @@ mv Telegram/ ~/Desktop/
 
 wget https://raw.githubusercontent.com/ThinkerPal/dhslinuxconfigure/master/sync-project.sh -O sync-project.sh
 sudo mv sync-project.sh /sync-project.sh
-
-sudo touch /etc/cron.d/gitrefresh
-sudo */3 * * * * /sync-project.sh >> /etc/cron.d/gitrefresh
 
 sudo apt-get upgrade -y
 
