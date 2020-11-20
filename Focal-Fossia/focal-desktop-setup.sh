@@ -16,7 +16,8 @@ curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > package
 sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
-sudo apt -y install net-tools  geany g++ python3-pip php apache2 nginx whois openssh-server git fish vim emacs npm vim  tmux libxss1 libappindicator1 libindicator7 libc++-dev google-chrome-stable
-sudo apt -y upgrade
-sudo apt -y purge thunderbird* libreoffice* gparted gnome-disk-utility
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 
+sudo apt -y install net-tools g++ python3-pip php nginx whois openssh-server git fish vim tmux libxss1 libappindicator1 libindicator7 libc++-dev google-chrome-stable code htop goaccess vlc nodejs
+sudo apt -y upgrade
+sudo apt -y purge thunderbird* 
