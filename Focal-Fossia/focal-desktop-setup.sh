@@ -18,6 +18,8 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microso
 
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 
-sudo apt -y install net-tools g++ python3-pip php nginx whois openssh-server git fish vim tmux libxss1 libappindicator1 libindicator7 libc++-dev google-chrome-stable code htop goaccess vlc nodejs
+sudo apt -y install net-tools g++ python3-pip php nginx whois openssh-server git fish vim tmux libxss1 libappindicator1 libindicator7 libc++-dev google-chrome-stable code htop goaccess vlc nodejs bat
 sudo apt -y upgrade
 sudo apt -y purge thunderbird* 
+
+curl -L https://get.oh-my.fish | fish
