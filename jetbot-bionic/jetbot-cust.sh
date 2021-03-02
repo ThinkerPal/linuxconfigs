@@ -1,5 +1,4 @@
 #!/bin/bash
- su jetbot
 sudo apt install wget
 wget https://raw.githubusercontent.com/ThinkerPal/dhslinuxconfigure/master/jetbot-bionic/sources.list
 sudo cp ./sources.list /etc/apt/
