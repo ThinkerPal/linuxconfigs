@@ -1,7 +1,7 @@
 #!/bin/bash
  su jetbot
 sudo apt install wget
-wget https://raw.githubusercontent.com/ThinkerPal/dhslinuxconfigure/master/jetbot-bionicsources.list
+wget https://raw.githubusercontent.com/ThinkerPal/dhslinuxconfigure/master/jetbot-bionic/sources.list
 sudo cp ./sources.list /etc/apt/
 sudo apt-get update
 sudo apt -y install net-tools g++ python3-pip php nginx whois openssh-server git fish vim emacs npm tmux libxss1 libappindicator1 libindicator7 libc++-dev google-chrome-stable cmake make zip python3
