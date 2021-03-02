@@ -3,7 +3,7 @@ sudo apt install wget
 wget https://raw.githubusercontent.com/ThinkerPal/dhslinuxconfigure/master/jetbot-bionic/sources.list
 sudo cp ./sources.list /etc/apt/
 sudo apt-get update
-sudo apt -y install net-tools g++ python3-pip php nginx whois openssh-server git fish vim emacs npm tmux libxss1 libappindicator1 libindicator7 libc++-dev google-chrome-stable cmake make zip python3
+sudo apt -y install net-tools g++ python3-pip php nginx whois openssh-server git fish vim emacs npm tmux libxss1 libappindicator1 libindicator7 libc++-dev cmake make zip python3
 sudo apt -y upgrade
 
 # Installs TF and its stuff
