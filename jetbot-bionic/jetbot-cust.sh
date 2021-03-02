@@ -22,7 +22,9 @@ sudo jupyter labextension install @jupyter-widgets/jupyterlab-manager
 jupyter lab --generate-config
 
 unzip jetbot.zip
-cd jetbot/utils
+cd jetbot
+sudo python3 setup.py install
+cd utils
 python3 ./create_stats_service.py
 sudo mv jetbot_stats.service /etc/systemd/system/jetbot_stats.service
 sudo systemctl enable jetbot_stats && sudo systemctl start jetbot_stats
