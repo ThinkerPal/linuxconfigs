@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt install curl wget
+sudo apt install curl wget apt-utils
 wget https://raw.githubusercontent.com/ThinkerPal/dhslinuxconfigure/master/jetbot-bionic/sources.list
 sudo cp ./sources.list /etc/apt/
 sudo apt-get update
