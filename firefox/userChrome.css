@@ -1,0 +1,94 @@
+/* 
+Firefox custom CSS for hiding tabs and using Edge-Style Vertical Tabs with Tree Style Tabs instead.
+
+Mix of stuff merged from everywhere, current version for FF > 137
+*/
+
+@media (-moz-bool-pref: "sidebar.verticalTabs"),
+       -moz-pref("sidebar.verticalTabs"){
+  #sidebar-main{
+    visibility: collapse;
+  }
+}
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),-moz-pref("userchrome.force-window-controls-on-left.enabled"){
+  #nav-bar > .titlebar-buttonbox-container{
+    order: -1 !important;
+    > .titlebar-buttonbox{
+      flex-direction: row-reverse;
+    }
+  }
+}
+@media not (-moz-bool-pref: "sidebar.verticalTabs"), not -moz-pref("sidebar.verticalTabs"){
+  #TabsToolbar{
+    visibility: collapse;
+  }
+  :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
+    display: flex !important;
+  }
+  :root:is([tabsintitlebar],[customtitlebar]) #toolbar-menubar:not([autohide="false"]) ~ #nav-bar{
+    > .titlebar-buttonbox-container{
+      display: flex !important;
+    }
+    :root[sizemode="normal"] & {
+      > .titlebar-spacer{
+        display: flex !important;
+      }
+    }
+    :root[sizemode="maximized"] & {
+      > .titlebar-spacer[type="post-tabs"]{
+        display: flex !important;
+      }
+      @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+        (-moz-gtk-csd-reversed-placement),
+        (-moz-platform: macos){
+        > .titlebar-spacer[type="post-tabs"]{
+          display: none !important;
+        }
+        > .titlebar-spacer[type="pre-tabs"]{
+          display: flex !important;
+        }
+      }
+    }
+  }
+}
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover {
+  margin-right: calc((var(--wide-tab-width) - var(--thin-tab-width)) * -1) !important;
+}
+  /* Hide sidebar header, when using Tree Style Tab. */
+  #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
+    #sidebar-header {
+    visibility: collapse;
+ border: none;
+  }
+  
+  /* Default (Hidden) Tree Style Tab View */
+  #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
+    overflow: hidden !important;
+    position: relative !important;
+    transition: all var(--transition-duration-tabs) ease var(--transition-timeout-tabs) !important;
+    min-width: var(--thin-tab-width) !important;
+    max-width: var(--thin-tab-width) !important;
+    z-index: 3;
+  }
+  
+  /* Tree Style Tab View - Expanded */
+  #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover,
+  #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
+    #sidebar {
+    transition: all var(--transition-duration-tabs) ease var(--transition-timeout-tabs) !important;
+    min-width: var(--wide-tab-width) !important;
+    max-width: var(--wide-tab-width) !important;
+    margin-right: calc(
+      (var(--wide-tab-width) - var(--thin-tab-width)) * -1
+    ) !important;
+    z-index: 3;
+  }
+  
+  /* Variables that need changing:*/
+  :root {
+    --thin-tab-width: 40px;
+    --wide-tab-width: 260px;
+    --transition-timeout-tabs: 200ms;
+    --transition-duration-tabs: 200ms;
+  }
